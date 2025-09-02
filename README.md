@@ -1,18 +1,18 @@
-# Implementos de Transporte - Marketplace
+# Implementos para Caminhões - Marketplace
 
-Uma plataforma moderna para compra e venda de implementos de transporte, com foco em caminhões, carretas, implementos rodoviários e sistema integrado de aluguel de pátios de estacionamento.
+Uma plataforma moderna para compra e venda de implementos para caminhões, incluindo basculantes, tanques, baús, plataformas, cegonhas e sistema integrado de aluguel de pátios.
 
 ## 🚀 Funcionalidades
 
 ### Marketplace
-- **Catálogo de veículos** com filtros avançados por marca, modelo, ano
-- **Páginas de veículo** detalhadas com especificações técnicas
+- **Catálogo de implementos** com filtros avançados por tipo, marca, capacidade
+- **Páginas de implemento** detalhadas com especificações técnicas
 - **Carrinho de compras** com persistência local
 - **Sistema de checkout** completo
-- **Avaliações e reviews** de veículos e vendedores
+- **Avaliações e reviews** de implementos e vendedores
 
 ### Estacionamento
-- **Aluguel de pátios** (estacionamentos, pátios cobertos, garagens)
+- **Aluguel de pátios** para implementos (estacionamentos, pátios cobertos, garagens)
 - **Filtros de localização** e especificações
 - **Sistema de reservas** com formulário de contato
 - **Calculadora de custos** mensal
@@ -41,12 +41,12 @@ src/
 ├── components/          # Componentes reutilizáveis
 │   ├── ui/             # Componentes base (Button, Badge, Rating)
 │   ├── layout/         # Layout (Header, Footer)
-│   ├── product/        # Componentes de veículo
+│   ├── product/        # Componentes de implemento
 │   ├── storage/        # Componentes de estacionamento
 │   └── filters/        # Filtros e busca
 ├── pages/              # Páginas da aplicação
 ├── contexts/           # Contextos React (Carrinho)
-├── data/               # Dados mock (veículos, vendedores, etc.)
+├── data/               # Dados mock (implementos, vendedores, etc.)
 ├── types/              # Tipos TypeScript
 └── utils/              # Utilitários e formatadores
 ```
@@ -65,10 +65,10 @@ As cores principais estão definidas no arquivo `tailwind.config.js` e podem ser
 ### Dados Mock
 Os dados de exemplo estão organizados em:
 
-- `src/data/products.ts` - Veículos do marketplace
-- `src/data/categories.ts` - Categorias de veículos
+- `src/data/products.ts` - Implementos do marketplace
+- `src/data/categories.ts` - Categorias de implementos
 - `src/data/sellers.ts` - Vendedores verificados
-- `src/data/storage.ts` - Pátios de estacionamento
+- `src/data/storage.ts` - Pátios para implementos
 
 ### Formatação
 Os formatadores estão em `src/utils/formatters.ts`:

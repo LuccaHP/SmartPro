@@ -73,7 +73,7 @@ export const StoragePage: React.FC = () => {
               Pátios e Estacionamentos
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Alugue pátios, garagens e estacionamentos para guardar seus caminhões e implementos com segurança e praticidade.
+              Alugue pátios, garagens e estacionamentos para guardar seus implementos e caminhões com segurança e praticidade.
             </p>
           </div>
         </div>
