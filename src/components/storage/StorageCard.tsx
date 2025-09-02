@@ -37,15 +37,16 @@ export const StorageCard: React.FC<StorageCardProps> = ({ storage, onReserve }) 
         </div>
 
         <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
-          <div className="flex items-center gap-2">
-            <Home className="w-4 h-4 text-gray-400" />
-            <span>{formatUnit(storage.areaM2, 'm²')}</span>
-          </div>
-          <div>
-            <span className="text-gray-600">Altura: {formatUnit(storage.heightM, 'm')}</span>
-          </div>
           <div className="col-span-2">
-            <span className="text-gray-600">Volume: {formatUnit(storage.volumeM3, 'm³')}</span>
+            <div className="flex items-center gap-2 mb-2">
+              <Home className="w-4 h-4 text-gray-400" />
+              <span>{formatUnit(storage.areaM2, 'm²')}</span>
+            </div>
+            {storage.heightM > 0 && (
+              <div className="text-gray-600 text-sm">
+                Altura: {formatUnit(storage.heightM, 'm')}
+              </div>
+            )}
           </div>
         </div>
 

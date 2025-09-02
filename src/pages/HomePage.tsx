@@ -27,17 +27,17 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-3xl">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Implementos para sua obra
+              Implementos de Transporte
             </h1>
             <p className="text-xl lg:text-2xl text-blue-100 mb-8">
-              Encontre ferramentas, equipamentos e materiais de construção com os melhores preços e qualidade garantida.
+              Encontre caminhões, carretas e implementos rodoviários com os melhores preços e qualidade garantida.
             </p>
             
             <form onSubmit={handleSearch} className="flex gap-3 mb-8">
               <div className="flex-1 relative">
                 <input
                   type="text"
-                  placeholder="Buscar implementos..."
+                  placeholder="Buscar caminhões, carretas..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full px-6 py-4 pl-12 text-gray-900 text-lg rounded-xl border border-transparent focus:outline-none focus:ring-2 focus:ring-blue-300"
@@ -52,7 +52,7 @@ export const HomePage: React.FC = () => {
             <div className="flex flex-wrap gap-4 text-blue-100">
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                <span>Produtos avaliados</span>
+                <span>Veículos avaliados</span>
               </div>
               <div className="flex items-center gap-2">
                 <Shield className="w-5 h-5" />
@@ -60,7 +60,7 @@ export const HomePage: React.FC = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Truck className="w-5 h-5" />
-                <span>Entrega rápida</span>
+                <span>Documentação em dia</span>
               </div>
             </div>
           </div>
@@ -76,7 +76,7 @@ export const HomePage: React.FC = () => {
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {categories.map(category => {
-              const IconComponent = (LucideIcons as any)[category.icon] || LucideIcons.Package;
+              const IconComponent = (LucideIcons as any)[category.icon] || LucideIcons.Truck;
               
               return (
                 <Link
@@ -88,7 +88,7 @@ export const HomePage: React.FC = () => {
                     <IconComponent className="w-6 h-6 text-blue-700" />
                   </div>
                   <h3 className="font-medium text-gray-900 mb-1">{category.name}</h3>
-                  <p className="text-sm text-gray-500">{category.productCount} produtos</p>
+                  <p className="text-sm text-gray-500">{category.productCount} veículos</p>
                 </Link>
               );
             })}
@@ -101,7 +101,7 @@ export const HomePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <h2 className="text-3xl font-bold text-gray-900">
-              Produtos em Destaque
+              Veículos em Destaque
             </h2>
             <Link to="/produtos" className="flex items-center gap-2 text-blue-700 hover:text-blue-900 transition-colors">
               Ver todos
@@ -124,10 +124,10 @@ export const HomePage: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                  Precisa de espaço para armazenagem?
+                  Precisa de pátio para seus veículos?
                 </h2>
                 <p className="text-lg text-gray-600 mb-6">
-                  Alugue galpões, boxes e containers para guardar seus materiais com segurança e praticidade.
+                  Alugue pátios, garagens e estacionamentos para guardar seus caminhões e implementos com segurança.
                 </p>
                 <div className="flex flex-wrap gap-4 mb-8">
                   <div className="flex items-center gap-2">
@@ -145,15 +145,15 @@ export const HomePage: React.FC = () => {
                 </div>
                 <Link to="/armazenagem">
                   <Button size="lg" className="px-8">
-                    Explorar espaços
+                    Explorar pátios
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
                 </Link>
               </div>
               <div>
                 <img
-                  src="https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Armazenagem"
+                  src="https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Pátio de estacionamento"
                   className="w-full h-64 lg:h-80 object-cover rounded-xl shadow-lg"
                 />
               </div>

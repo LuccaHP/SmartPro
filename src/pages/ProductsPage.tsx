@@ -109,7 +109,7 @@ export const ProductsPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <div>
               <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
-                {selectedCategory ? selectedCategory.name : 'Todos os Produtos'}
+                {selectedCategory ? selectedCategory.name : 'Todos os Veículos'}
               </h1>
               {searchQuery && (
                 <p className="text-gray-600 mt-1">
@@ -180,7 +180,7 @@ export const ProductsPage: React.FC = () => {
           </div>
           
           <p className="text-gray-600">
-            {filteredProducts.length} produtos encontrados
+            {filteredProducts.length} veículos encontrados
           </p>
         </div>
 
@@ -211,7 +211,7 @@ export const ProductsPage: React.FC = () => {
                   <Search className="w-8 h-8 text-gray-400" />
                 </div>
                 <h3 className="text-lg font-medium text-gray-900 mb-2">
-                  Nenhum produto encontrado
+                  Nenhum veículo encontrado
                 </h3>
                 <p className="text-gray-600 mb-6">
                   Tente ajustar os filtros ou buscar por outros termos.

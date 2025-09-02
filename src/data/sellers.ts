@@ -3,7 +3,7 @@ import { Seller } from '../types';
 export const sellers: Seller[] = [
   {
     id: '1',
-    name: 'Ferragens Central',
+    name: 'Caminhões São Paulo',
     verified: true,
     location: 'São Paulo, SP',
     rating: 4.7,
@@ -11,23 +11,23 @@ export const sellers: Seller[] = [
   },
   {
     id: '2',
-    name: 'Equipamentos Silva',
+    name: 'Transportes Silva',
     verified: true,
-    location: 'Rio de Janeiro, RJ',
+    location: 'Campinas, SP',
     rating: 4.8,
     reviewCount: 567
   },
   {
     id: '3',
-    name: 'EPI Total',
+    name: 'Frota Rio',
     verified: true,
-    location: 'Belo Horizonte, MG',
+    location: 'Rio de Janeiro, RJ',
     rating: 4.5,
     reviewCount: 890
   },
   {
     id: '4',
-    name: 'Máquinas & Equipamentos Ltda',
+    name: 'Volvo Trucks Curitiba',
     verified: true,
     location: 'Curitiba, PR',
     rating: 4.9,
@@ -35,9 +35,9 @@ export const sellers: Seller[] = [
   },
   {
     id: '5',
-    name: 'Materiais Nordeste',
+    name: 'Porto Veículos',
     verified: false,
-    location: 'Salvador, BA',
+    location: 'Santos, SP',
     rating: 4.3,
     reviewCount: 456
   }

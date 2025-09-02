@@ -3,133 +3,147 @@ import { Product } from '../types';
 export const products: Product[] = [
   {
     id: '1',
-    title: 'Furadeira de Impacto Bosch GSB 550 RE',
-    categoryId: 'ferramentas',
-    price: 189.90,
+    title: 'Scania R 450 6x2 2019',
+    categoryId: 'caminhoes',
+    price: 285000.00,
     images: [
-      'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1118449/pexels-photo-1118449.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
-    rating: 4.5,
-    reviewCount: 127,
-    condition: 'novo',
+    rating: 4.8,
+    reviewCount: 27,
+    condition: 'usado',
     location: 'São Paulo, SP',
     specs: {
-      'Potência': '550W',
-      'Voltagem': '220V',
-      'Peso': '1.8kg',
-      'Capacidade do mandril': '13mm'
+      'Ano': '2019',
+      'Quilometragem': '450.000 km',
+      'Motor': 'DC13 450cv',
+      'Transmissão': 'Opticruise',
+      'Eixos': '6x2',
+      'Combustível': 'Diesel S10'
     },
     sellerId: '1',
-    stock: 15,
+    stock: 1,
     featured: true
   },
   {
     id: '2',
-    title: 'Betoneira 400 Litros Motomil',
-    categoryId: 'equipamentos-pesados',
-    price: 1299.00,
+    title: 'Carreta Graneleira 3 Eixos Librelato',
+    categoryId: 'carretas',
+    price: 95000.00,
     images: [
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1118449/pexels-photo-1118449.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
-    rating: 4.8,
-    reviewCount: 84,
-    condition: 'novo',
-    location: 'Rio de Janeiro, RJ',
+    rating: 4.6,
+    reviewCount: 18,
+    condition: 'usado',
+    location: 'Campinas, SP',
     specs: {
-      'Capacidade': '400L',
-      'Motor': '2HP',
-      'Voltagem': '220V',
-      'Peso': '95kg'
+      'Ano': '2020',
+      'Capacidade': '30 toneladas',
+      'Eixos': '3 eixos',
+      'Comprimento': '14 metros',
+      'Material': 'Aço carbono',
+      'Freios': 'ABS'
     },
     sellerId: '2',
-    stock: 3,
+    stock: 1,
     featured: true
   },
   {
     id: '3',
-    title: 'Capacete de Segurança CA 31469',
-    categoryId: 'epi',
-    price: 24.90,
+    title: 'Mercedes-Benz Atego 1719 4x2',
+    categoryId: 'caminhoes',
+    price: 165000.00,
     images: [
-      'https://images.pexels.com/photos/209235/pexels-photo-209235.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
-    rating: 4.2,
-    reviewCount: 356,
-    condition: 'novo',
-    location: 'Belo Horizonte, MG',
-    specs: {
-      'Material': 'Polietileno',
-      'Cores disponíveis': 'Branco, Amarelo, Azul',
-      'Certificação': 'CA 31469',
-      'Peso': '350g'
-    },
-    sellerId: '3',
-    stock: 250
-  },
-  {
-    id: '4',
-    title: 'Martelo de Unha Stanley 25mm',
-    categoryId: 'ferramentas',
-    price: 45.00,
-    images: [
-      'https://images.pexels.com/photos/162553/keys-workshop-mechanic-tools-162553.jpeg?auto=compress&cs=tinysrgb&w=400'
-    ],
-    rating: 4.7,
-    reviewCount: 89,
-    condition: 'novo',
-    location: 'Porto Alegre, RS',
-    specs: {
-      'Peso da cabeça': '25mm',
-      'Cabo': 'Fibra de vidro',
-      'Comprimento': '33cm',
-      'Peso total': '680g'
-    },
-    sellerId: '1',
-    stock: 45
-  },
-  {
-    id: '5',
-    title: 'Escavadeira Hidráulica CAT 320D2',
-    categoryId: 'equipamentos-pesados',
-    price: 450000.00,
-    images: [
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=400'
-    ],
-    rating: 4.9,
-    reviewCount: 12,
+    rating: 4.5,
+    reviewCount: 34,
     condition: 'usado',
-    location: 'Curitiba, PR',
+    location: 'Rio de Janeiro, RJ',
     specs: {
       'Ano': '2018',
-      'Horas': '4500h',
-      'Peso operacional': '20.5 toneladas',
-      'Potência do motor': '122kW'
+      'Quilometragem': '380.000 km',
+      'Motor': 'OM924LA 190cv',
+      'Transmissão': 'Manual 6 marchas',
+      'Eixos': '4x2',
+      'Carroceria': 'Baú frigorífico'
     },
-    sellerId: '4',
+    sellerId: '3',
     stock: 1
   },
   {
-    id: '6',
-    title: 'Cimento Portland CP-II-E-32',
-    categoryId: 'materiais',
-    price: 28.50,
+    id: '4',
+    title: 'Volvo FH 540 6x4 Globetrotter',
+    categoryId: 'caminhoes',
+    price: 420000.00,
     images: [
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    rating: 4.9,
+    reviewCount: 15,
+    condition: 'usado',
+    location: 'Curitiba, PR',
+    specs: {
+      'Ano': '2021',
+      'Quilometragem': '280.000 km',
+      'Motor': 'D13K 540cv',
+      'Transmissão': 'I-Shift',
+      'Eixos': '6x4',
+      'Cabine': 'Globetrotter XL'
+    },
+    sellerId: '4',
+    stock: 1,
+    featured: true
+  },
+  {
+    id: '5',
+    title: 'Carreta Porta Container 40 pés',
+    categoryId: 'carretas',
+    price: 75000.00,
+    images: [
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1118449/pexels-photo-1118449.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.4,
-    reviewCount: 203,
-    condition: 'novo',
-    location: 'Salvador, BA',
+    reviewCount: 22,
+    condition: 'usado',
+    location: 'Santos, SP',
     specs: {
-      'Peso': '50kg',
-      'Tipo': 'CP-II-E-32',
-      'Validade': '90 dias',
-      'Resistência': '32 MPa'
+      'Ano': '2019',
+      'Capacidade': '40 pés',
+      'Eixos': '3 eixos',
+      'Peso': '6.5 toneladas',
+      'Material': 'Aço estrutural',
+      'Twist Locks': '8 unidades'
     },
     sellerId: '5',
-    stock: 500
+    stock: 2
+  },
+  {
+    id: '6',
+    title: 'Pneu Pirelli 295/80R22.5 Formula Driver II',
+    categoryId: 'pecas-componentes',
+    price: 890.00,
+    images: [
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    rating: 4.7,
+    reviewCount: 156,
+    condition: 'novo',
+    location: 'São Paulo, SP',
+    specs: {
+      'Medida': '295/80R22.5',
+      'Índice de carga': '152/148',
+      'Velocidade máxima': '160 km/h',
+      'Aplicação': 'Eixo direcional',
+      'Garantia': '12 meses',
+      'Marca': 'Pirelli'
+    },
+    sellerId: '1',
+    stock: 48,
+    featured: true
   }
 ];

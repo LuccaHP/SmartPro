@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Buscar implementos..."
+                placeholder="Buscar caminhões, carretas..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -49,10 +49,10 @@ export const Header: React.FC = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             <Link to="/produtos" className="text-gray-700 hover:text-blue-700 transition-colors">
-              Produtos
+              Veículos
             </Link>
             <Link to="/armazenagem" className="text-gray-700 hover:text-blue-700 transition-colors">
-              Armazenagem
+              Pátios
             </Link>
             <Link to="/ajuda" className="text-gray-700 hover:text-blue-700 transition-colors">
               Ajuda
@@ -81,7 +81,7 @@ export const Header: React.FC = () => {
           <div className="relative">
             <input
               type="text"
-              placeholder="Buscar implementos..."
+              placeholder="Buscar caminhões, carretas..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full px-4 py-2 pl-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
@@ -98,14 +98,14 @@ export const Header: React.FC = () => {
               className="block px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Produtos
+              Veículos
             </Link>
             <Link
               to="/armazenagem"
               className="block px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-gray-100 rounded-lg transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Armazenagem
+              Pátios
             </Link>
             <Link
               to="/ajuda"

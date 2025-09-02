@@ -20,6 +20,7 @@ export const CartPage: React.FC = () => {
   );
   
   const shipping = 25.00; // Mock shipping
+  const shipping = 500.00; // Mock shipping for vehicles
   const total = subtotal + shipping;
 
   if (items.length === 0) {
@@ -34,11 +35,11 @@ export const CartPage: React.FC = () => {
               Seu carrinho está vazio
             </h1>
             <p className="text-gray-600 mb-8">
-              Explore nossos produtos e adicione itens ao seu carrinho.
+              Explore nossos veículos e adicione itens ao seu carrinho.
             </p>
             <Link to="/produtos">
               <Button size="lg">
-                Continuar comprando
+                Ver veículos
               </Button>
             </Link>
           </div>
@@ -159,7 +160,7 @@ export const CartPage: React.FC = () => {
                 </Link>
                 <Link to="/produtos">
                   <Button variant="outline" className="w-full">
-                    Continuar comprando
+                    Ver mais veículos
                   </Button>
                 </Link>
               </div>
@@ -168,14 +169,14 @@ export const CartPage: React.FC = () => {
         </div>
 
         {/* Related Products */}
-        {relatedProducts.length > 0 && (
+        {filteredProducts.length > 0 && (
           <div>
             <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              Produtos Relacionados
+              Veículos Relacionados
             </h2>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {relatedProducts.map(relatedProduct => (
+              {filteredProducts.slice(0, 4).map(relatedProduct => (
                 <ProductCard key={relatedProduct.id} product={relatedProduct} />
               ))}
             </div>

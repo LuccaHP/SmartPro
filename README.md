@@ -1,18 +1,18 @@
-# Implementos - Marketplace de Construção Civil
+# Implementos de Transporte - Marketplace
 
-Uma plataforma moderna para compra e venda de implementos de construção civil, com sistema integrado de aluguel de espaços de armazenagem.
+Uma plataforma moderna para compra e venda de implementos de transporte, com foco em caminhões, carretas, implementos rodoviários e sistema integrado de aluguel de pátios de estacionamento.
 
 ## 🚀 Funcionalidades
 
 ### Marketplace
-- **Catálogo de produtos** com filtros avançados e busca
-- **Páginas de produto** detalhadas com especificações técnicas
+- **Catálogo de veículos** com filtros avançados por marca, modelo, ano
+- **Páginas de veículo** detalhadas com especificações técnicas
 - **Carrinho de compras** com persistência local
 - **Sistema de checkout** completo
-- **Avaliações e reviews** de produtos e vendedores
+- **Avaliações e reviews** de veículos e vendedores
 
-### Armazenagem
-- **Aluguel de espaços** (galpões, boxes, containers)
+### Estacionamento
+- **Aluguel de pátios** (estacionamentos, pátios cobertos, garagens)
 - **Filtros de localização** e especificações
 - **Sistema de reservas** com formulário de contato
 - **Calculadora de custos** mensal
@@ -41,12 +41,12 @@ src/
 ├── components/          # Componentes reutilizáveis
 │   ├── ui/             # Componentes base (Button, Badge, Rating)
 │   ├── layout/         # Layout (Header, Footer)
-│   ├── product/        # Componentes de produto
-│   ├── storage/        # Componentes de armazenagem
+│   ├── product/        # Componentes de veículo
+│   ├── storage/        # Componentes de estacionamento
 │   └── filters/        # Filtros e busca
 ├── pages/              # Páginas da aplicação
 ├── contexts/           # Contextos React (Carrinho)
-├── data/               # Dados mock (produtos, vendedores, etc.)
+├── data/               # Dados mock (veículos, vendedores, etc.)
 ├── types/              # Tipos TypeScript
 └── utils/              # Utilitários e formatadores
 ```
@@ -65,10 +65,10 @@ As cores principais estão definidas no arquivo `tailwind.config.js` e podem ser
 ### Dados Mock
 Os dados de exemplo estão organizados em:
 
-- `src/data/products.ts` - Produtos do marketplace
-- `src/data/categories.ts` - Categorias de produtos
+- `src/data/products.ts` - Veículos do marketplace
+- `src/data/categories.ts` - Categorias de veículos
 - `src/data/sellers.ts` - Vendedores verificados
-- `src/data/storage.ts` - Espaços de armazenagem
+- `src/data/storage.ts` - Pátios de estacionamento
 
 ### Formatação
 Os formatadores estão em `src/utils/formatters.ts`:
@@ -76,7 +76,7 @@ Os formatadores estão em `src/utils/formatters.ts`:
 - **Moeda**: formatPrice() - formato brasileiro (BRL)
 - **Parcelamento**: formatInstallment() - cálculo automático
 - **Números**: formatNumber() - separadores pt-BR
-- **Unidades**: formatUnit() - métricas (kg, m, m², m³)
+- **Unidades**: formatUnit() - métricas (km, anos, toneladas)
 
 ## 🚀 Como executar
 
@@ -131,6 +131,5 @@ Para transformar este projeto em uma aplicação real:
 ## 📧 Suporte
 
 Para dúvidas sobre implementação ou customização, entre em contato:
-- **E-mail**: contato@implementos.com.br
+- **E-mail**: contato@implementostransporte.com.br
 - **Telefone**: (11) 9999-9999
-</parameter>

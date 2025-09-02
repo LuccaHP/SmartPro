@@ -11,7 +11,7 @@ export const HelpPage: React.FC = () => {
             Central de Ajuda
           </h1>
           <p className="text-lg text-gray-600">
-            Estamos aqui para ajudar você com suas compras e dúvidas.
+            Estamos aqui para ajudar você com suas compras de veículos e dúvidas.
           </p>
         </div>
 
@@ -22,7 +22,7 @@ export const HelpPage: React.FC = () => {
               <Mail className="w-6 h-6 text-blue-700" />
             </div>
             <h3 className="font-semibold text-gray-900 mb-2">E-mail</h3>
-            <p className="text-gray-600 mb-4">contato@implementos.com.br</p>
+            <p className="text-gray-600 mb-4">contato@implementostransporte.com.br</p>
             <Button variant="outline" size="sm">
               Enviar e-mail
             </Button>
@@ -66,9 +66,9 @@ export const HelpPage: React.FC = () => {
                     Como funciona a entrega?
                   </h3>
                   <p className="text-gray-600">
-                    Trabalhamos com transportadoras parceiras para entregar seus produtos com segurança. 
-                    O prazo varia entre 5-10 dias úteis dependendo da sua localização. Você recebe o código 
-                    de rastreamento por e-mail assim que o produto for despachado.
+                    Para veículos pesados, organizamos a entrega através de cegonheiras especializadas ou 
+                    você pode retirar diretamente no local. Para peças menores, utilizamos transportadoras 
+                    convencionais. O prazo varia entre 5-15 dias úteis dependendo do tipo e localização.
                   </p>
                 </div>
               </div>
@@ -84,7 +84,7 @@ export const HelpPage: React.FC = () => {
                   <p className="text-gray-600">
                     Todos os vendedores passam por verificação. Procure pelo selo de verificado e 
                     confira as avaliações de outros compradores. Nossa plataforma oferece proteção 
-                    total para suas compras.
+                    total para suas compras de veículos.
                   </p>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export const HelpPage: React.FC = () => {
                   </h3>
                   <p className="text-gray-600">
                     Sim! Você pode cancelar seu pedido gratuitamente em até 24 horas após a compra, 
-                    desde que o produto ainda não tenha sido despachado. Entre em contato conosco 
+                    desde que o veículo ainda não tenha sido despachado. Entre em contato conosco 
                     o quanto antes.
                   </p>
                 </div>
@@ -111,10 +111,10 @@ export const HelpPage: React.FC = () => {
                 <MessageCircle className="w-6 h-6 text-blue-700 mt-1" />
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">
-                    Como funciona o aluguel de armazenagem?
+                    Como funciona o aluguel de pátios?
                   </h3>
                   <p className="text-gray-600">
-                    Nossos espaços de armazenagem são seguros e acessíveis. Você pode reservar 
+                    Nossos pátios são seguros e acessíveis para caminhões. Você pode reservar 
                     online, fazer uma visita para conhecer o espaço e assinar o contrato. 
                     O pagamento é mensal e você tem acesso liberado 24h por dia.
                   </p>
