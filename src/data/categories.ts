@@ -2,39 +2,51 @@ import { Category } from '../types';
 
 export const categories: Category[] = [
   {
-    id: 'caminhoes',
-    name: 'Caminhões',
+    id: 'basculantes-cacambas',
+    name: 'Basculantes/Caçambas',
     icon: 'Truck',
-    productCount: 145
-  },
-  {
-    id: 'carretas',
-    name: 'Carretas',
-    icon: 'Container',
     productCount: 89
   },
   {
-    id: 'implementos-rodoviarios',
-    name: 'Implementos Rodoviários',
-    icon: 'Trailer',
-    productCount: 156
+    id: 'tanques',
+    name: 'Tanques',
+    icon: 'Fuel',
+    productCount: 67
   },
   {
-    id: 'pecas-componentes',
-    name: 'Peças e Componentes',
-    icon: 'Settings',
-    productCount: 312
-  },
-  {
-    id: 'equipamentos-carga',
-    name: 'Equipamentos de Carga',
+    id: 'furgoes-baus',
+    name: 'Furgões/Baús',
     icon: 'Package',
+    productCount: 134
+  },
+  {
+    id: 'sider',
+    name: 'Sider',
+    icon: 'Container',
     productCount: 78
   },
   {
-    id: 'acessorios',
-    name: 'Acessórios',
-    icon: 'Wrench',
-    productCount: 134
+    id: 'plataformas',
+    name: 'Plataformas',
+    icon: 'Layers',
+    productCount: 92
+  },
+  {
+    id: 'cegonhas',
+    name: 'Cegonhas',
+    icon: 'Car',
+    productCount: 45
+  },
+  {
+    id: 'graneleiros',
+    name: 'Graneleiros',
+    icon: 'Wheat',
+    productCount: 56
+  },
+  {
+    id: 'cestos-aereos',
+    name: 'Cestos Aéreos',
+    icon: 'Zap',
+    productCount: 34
   }
 ];

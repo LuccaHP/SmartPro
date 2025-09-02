@@ -11,7 +11,7 @@ export const HelpPage: React.FC = () => {
             Central de Ajuda
           </h1>
           <p className="text-lg text-gray-600">
-            Estamos aqui para ajudar você com suas compras de veículos e dúvidas.
+            Estamos aqui para ajudar você com suas compras de implementos e dúvidas.
           </p>
         </div>
 
@@ -66,7 +66,7 @@ export const HelpPage: React.FC = () => {
                     Como funciona a entrega?
                   </h3>
                   <p className="text-gray-600">
-                    Para veículos pesados, organizamos a entrega através de cegonheiras especializadas ou 
+                    Para implementos pesados, organizamos a entrega através de carretas especializadas ou 
                     você pode retirar diretamente no local. Para peças menores, utilizamos transportadoras 
                     convencionais. O prazo varia entre 5-15 dias úteis dependendo do tipo e localização.
                   </p>
@@ -84,7 +84,7 @@ export const HelpPage: React.FC = () => {
                   <p className="text-gray-600">
                     Todos os vendedores passam por verificação. Procure pelo selo de verificado e 
                     confira as avaliações de outros compradores. Nossa plataforma oferece proteção 
-                    total para suas compras de veículos.
+                    total para suas compras de implementos.
                   </p>
                 </div>
               </div>
@@ -99,7 +99,7 @@ export const HelpPage: React.FC = () => {
                   </h3>
                   <p className="text-gray-600">
                     Sim! Você pode cancelar seu pedido gratuitamente em até 24 horas após a compra, 
-                    desde que o veículo ainda não tenha sido despachado. Entre em contato conosco 
+                    desde que o implemento ainda não tenha sido despachado. Entre em contato conosco 
                     o quanto antes.
                   </p>
                 </div>
@@ -116,7 +116,7 @@ export const HelpPage: React.FC = () => {
                   <p className="text-gray-600">
                     Nossos pátios são seguros e acessíveis para caminhões. Você pode reservar 
                     online, fazer uma visita para conhecer o espaço e assinar o contrato. 
-                    O pagamento é mensal e você tem acesso liberado 24h por dia.
+                    O pagamento é mensal e você tem acesso liberado 24h por dia para seus implementos.
                   </p>
                 </div>
               </div>
@@ -130,7 +130,7 @@ export const HelpPage: React.FC = () => {
             Não encontrou o que procurava?
           </h3>
           <p className="text-blue-100 mb-6">
-            Nossa equipe está pronta para ajudar com qualquer dúvida ou problema.
+            Nossa equipe está pronta para ajudar com qualquer dúvida sobre implementos.
           </p>
           <Button variant="secondary">
             Falar com atendimento

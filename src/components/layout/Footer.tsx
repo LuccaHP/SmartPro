@@ -14,7 +14,7 @@ export const Footer: React.FC = () => {
               <span className="text-xl font-bold">Implementos</span>
             </Link>
             <p className="text-gray-300 text-sm">
-              Marketplace de implementos de transporte e aluguel de pátios para veículos pesados.
+              Marketplace de implementos para caminhões e aluguel de pátios para equipamentos pesados.
             </p>
           </div>
 
@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg">Navegação</h3>
             <div className="space-y-2 text-sm">
               <Link to="/produtos" className="block text-gray-300 hover:text-white transition-colors">
-                Veículos
+                Implementos
               </Link>
               <Link to="/armazenagem" className="block text-gray-300 hover:text-white transition-colors">
                 Pátios
@@ -42,16 +42,16 @@ export const Footer: React.FC = () => {
             <h3 className="font-semibold text-lg">Categorias</h3>
             <div className="space-y-2 text-sm">
               <Link to="/produtos?categoria=caminhoes" className="block text-gray-300 hover:text-white transition-colors">
-                Caminhões
+                Basculantes/Caçambas
               </Link>
-              <Link to="/produtos?categoria=carretas" className="block text-gray-300 hover:text-white transition-colors">
-                Carretas
+              <Link to="/produtos?categoria=tanques" className="block text-gray-300 hover:text-white transition-colors">
+                Tanques
               </Link>
-              <Link to="/produtos?categoria=implementos-rodoviarios" className="block text-gray-300 hover:text-white transition-colors">
-                Implementos Rodoviários
+              <Link to="/produtos?categoria=furgoes-baus" className="block text-gray-300 hover:text-white transition-colors">
+                Furgões/Baús
               </Link>
-              <Link to="/produtos?categoria=pecas-componentes" className="block text-gray-300 hover:text-white transition-colors">
-                Peças e Componentes
+              <Link to="/produtos?categoria=plataformas" className="block text-gray-300 hover:text-white transition-colors">
+                Plataformas
               </Link>
             </div>
           </div>
@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-400">
-          <p>&copy; 2025 Implementos de Transporte. Todos os direitos reservados.</p>
+          <p>&copy; 2025 Implementos para Caminhões. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

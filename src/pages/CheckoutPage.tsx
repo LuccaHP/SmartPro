@@ -52,7 +52,7 @@ export const CheckoutPage: React.FC = () => {
             Carrinho vazio
           </h1>
           <Link to="/produtos">
-            <Button>Ver veículos</Button>
+            <Button>Ver implementos</Button>
           </Link>
         </div>
       </div>
@@ -142,7 +142,7 @@ export const CheckoutPage: React.FC = () => {
                     <Truck className="w-5 h-5 text-gray-600" />
                     <div>
                       <div className="font-medium">Entrega</div>
-                      <div className="text-sm text-gray-500">5-15 dias úteis - {formatPrice(500.00)}</div>
+                      <div className="text-sm text-gray-500">5-15 dias úteis - {formatPrice(shipping)}</div>
                     </div>
                   </label>
 
