@@ -19,7 +19,6 @@ export const CartPage: React.FC = () => {
     0
   );
   
-  const shipping = 25.00; // Mock shipping
   const shipping = 500.00; // Mock shipping for vehicles
   const total = subtotal + shipping;
 
