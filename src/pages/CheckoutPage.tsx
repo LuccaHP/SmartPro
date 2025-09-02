@@ -52,7 +52,7 @@ export const CheckoutPage: React.FC = () => {
             Carrinho vazio
           </h1>
           <Link to="/produtos">
-            <Button>Ir às compras</Button>
+            <Button>Ver implementos</Button>
           </Link>
         </div>
       </div>
@@ -142,7 +142,7 @@ export const CheckoutPage: React.FC = () => {
                     <Truck className="w-5 h-5 text-gray-600" />
                     <div>
                       <div className="font-medium">Entrega</div>
-                      <div className="text-sm text-gray-500">5-10 dias úteis - {formatPrice(25.00)}</div>
+                      <div className="text-sm text-gray-500">5-15 dias úteis - {formatPrice(shipping)}</div>
                     </div>
                   </label>
 
@@ -158,7 +158,7 @@ export const CheckoutPage: React.FC = () => {
                     <MapPin className="w-5 h-5 text-gray-600" />
                     <div>
                       <div className="font-medium">Retirada</div>
-                      <div className="text-sm text-gray-500">Grátis - Retirar na loja</div>
+                      <div className="text-sm text-gray-500">Grátis - Retirar no local</div>
                     </div>
                   </label>
                 </div>

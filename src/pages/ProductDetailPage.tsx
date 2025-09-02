@@ -25,9 +25,9 @@ export const ProductDetailPage: React.FC = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Produto não encontrado</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Implemento não encontrado</h1>
           <Link to="/produtos">
-            <Button>Voltar aos produtos</Button>
+            <Button>Voltar aos implementos</Button>
           </Link>
         </div>
       </div>
@@ -50,7 +50,7 @@ export const ProductDetailPage: React.FC = () => {
         <nav className="flex items-center gap-2 text-sm text-gray-500 mb-8">
           <Link to="/" className="hover:text-blue-700">Início</Link>
           <span>/</span>
-          <Link to="/produtos" className="hover:text-blue-700">Produtos</Link>
+          <Link to="/produtos" className="hover:text-blue-700">Implementos</Link>
           {category && (
             <>
               <span>/</span>
