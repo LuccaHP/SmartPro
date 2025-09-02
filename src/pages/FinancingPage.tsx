@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import rbcreditoLogo from '../data/img/rbcredito.png';
 import { Link } from 'react-router-dom';
 import { Calculator, CreditCard, TrendingUp, ShoppingCart, ArrowLeft } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
@@ -32,7 +33,7 @@ export const FinancingPage: React.FC = () => {
   }).filter(Boolean);
 
   const totalAmount = cartProducts.reduce(
-    (sum, product) => sum + (product!.price * product!.cartQuantity), 
+    (sum, product) => sum + (product!.price * product!.cartQuantity),
     0
   );
 
@@ -50,9 +51,9 @@ export const FinancingPage: React.FC = () => {
 
     // Cálculo usando fórmula Price (juros compostos)
     const monthlyRate = FINANCING_PARAMS.interestRate / 100;
-    const monthlyPayment = financingAmount * (monthlyRate * Math.pow(1 + monthlyRate, selectedTerm)) / 
-                          (Math.pow(1 + monthlyRate, selectedTerm) - 1);
-    
+    const monthlyPayment = financingAmount * (monthlyRate * Math.pow(1 + monthlyRate, selectedTerm)) /
+      (Math.pow(1 + monthlyRate, selectedTerm) - 1);
+
     const totalPayment = monthlyPayment * selectedTerm + downPayment;
     const totalInterest = totalPayment - totalAmount;
 
@@ -102,9 +103,12 @@ export const FinancingPage: React.FC = () => {
             <ArrowLeft className="w-5 h-5" />
             Voltar ao carrinho
           </Link>
-          <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
-            Financiamento de Implementos
-          </h1>
+          <div className="flex items-center gap-3">
+            <img src={rbcreditoLogo} alt="RB Crédito" className="w-24 h-24 object-contain" />
+            <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
+              Financiamento de Implementos 
+            </h1>
+          </div>
           <p className="text-gray-600 mt-2">
             Simule e solicite financiamento para seus implementos com as condições da nossa empresa.
           </p>
@@ -118,11 +122,11 @@ export const FinancingPage: React.FC = () => {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
                 Implementos para Financiar
               </h2>
-              
+
               <div className="space-y-3 mb-4">
                 {cartProducts.map(product => {
                   if (!product) return null;
-                  
+
                   return (
                     <div key={product.id} className="flex gap-3 p-3 bg-gray-50 rounded-lg">
                       <img
@@ -145,7 +149,7 @@ export const FinancingPage: React.FC = () => {
                   );
                 })}
               </div>
-              
+
               <div className="border-t border-gray-200 pt-3">
                 <div className="flex justify-between">
                   <span className="text-lg font-semibold text-gray-900">Montante Total</span>
@@ -161,7 +165,7 @@ export const FinancingPage: React.FC = () => {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
                 Opções de Financiamento
               </h2>
-              
+
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -213,7 +217,7 @@ export const FinancingPage: React.FC = () => {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
                 Dados para Análise de Crédito
               </h2>
-              
+
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
@@ -223,7 +227,7 @@ export const FinancingPage: React.FC = () => {
                     type="text"
                     required
                     value={customerForm.name}
-                    onChange={(e) => setCustomerForm({...customerForm, name: e.target.value})}
+                    onChange={(e) => setCustomerForm({ ...customerForm, name: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -237,7 +241,7 @@ export const FinancingPage: React.FC = () => {
                     required
                     placeholder="000.000.000-00"
                     value={customerForm.cpf}
-                    onChange={(e) => setCustomerForm({...customerForm, cpf: e.target.value})}
+                    onChange={(e) => setCustomerForm({ ...customerForm, cpf: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -250,7 +254,7 @@ export const FinancingPage: React.FC = () => {
                     type="email"
                     required
                     value={customerForm.email}
-                    onChange={(e) => setCustomerForm({...customerForm, email: e.target.value})}
+                    onChange={(e) => setCustomerForm({ ...customerForm, email: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -264,7 +268,7 @@ export const FinancingPage: React.FC = () => {
                     required
                     placeholder="(11) 99999-9999"
                     value={customerForm.phone}
-                    onChange={(e) => setCustomerForm({...customerForm, phone: e.target.value})}
+                    onChange={(e) => setCustomerForm({ ...customerForm, phone: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -278,7 +282,7 @@ export const FinancingPage: React.FC = () => {
                     required
                     min="0"
                     value={customerForm.income}
-                    onChange={(e) => setCustomerForm({...customerForm, income: e.target.value})}
+                    onChange={(e) => setCustomerForm({ ...customerForm, income: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -301,7 +305,7 @@ export const FinancingPage: React.FC = () => {
                   Simulação de Financiamento
                 </h2>
               </div>
-              
+
               <div className="space-y-4">
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <div className="text-sm text-gray-600 mb-1">Montante para Financiamento</div>
@@ -372,7 +376,7 @@ export const FinancingPage: React.FC = () => {
               <h3 className="font-semibold text-gray-900 mb-4">
                 Condições da Empresa
               </h3>
-              
+
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <TrendingUp className="w-5 h-5 text-green-600 mt-0.5" />
@@ -411,23 +415,22 @@ export const FinancingPage: React.FC = () => {
               <h3 className="font-semibold text-gray-900 mb-4">
                 Escolha o Prazo de Pagamento
               </h3>
-              
+
               <div className="grid grid-cols-2 gap-3">
                 {FINANCING_PARAMS.availableTerms.map(term => {
                   const tempAmount = totalAmount - (totalAmount * downPaymentPercent) / 100;
                   const monthlyRate = FINANCING_PARAMS.interestRate / 100;
-                  const payment = tempAmount * (monthlyRate * Math.pow(1 + monthlyRate, term)) / 
-                                 (Math.pow(1 + monthlyRate, term) - 1);
-                  
+                  const payment = tempAmount * (monthlyRate * Math.pow(1 + monthlyRate, term)) /
+                    (Math.pow(1 + monthlyRate, term) - 1);
+
                   return (
                     <button
                       key={term}
                       onClick={() => setSelectedTerm(term)}
-                      className={`p-4 border rounded-lg text-left transition-all ${
-                        selectedTerm === term
-                          ? 'border-blue-700 bg-blue-50'
-                          : 'border-gray-200 hover:border-gray-300'
-                      }`}
+                      className={`p-4 border rounded-lg text-left transition-all ${selectedTerm === term
+                        ? 'border-blue-700 bg-blue-50'
+                        : 'border-gray-200 hover:border-gray-300'
+                        }`}
                     >
                       <div className="font-medium text-gray-900">{term} meses</div>
                       <div className="text-sm text-blue-700 font-medium">

@@ -1,7 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Filter, Grid, List, ChevronDown } from 'lucide-react';
+import { Filter, Grid, List, ChevronDown, Search } from 'lucide-react';
 import { products } from '../data/products';
+import galegoImage from '../data/img/galego.jpg';
 import { categories } from '../data/categories';
 import { ProductCard } from '../components/product/ProductCard';
 import { FiltersPanel } from '../components/filters/FiltersPanel';
@@ -12,7 +13,7 @@ export const ProductsPage: React.FC = () => {
   const [searchParams] = useSearchParams();
   const [filters, setFilters] = useState<Filters>({
     categories: [],
-    priceRange: [0, 500000],
+    priceRange: [0, 2000000],
     brands: [],
     condition: [],
     location: '',
@@ -26,8 +27,7 @@ export const ProductsPage: React.FC = () => {
   // Initialize filters from URL params
   useEffect(() => {
     const categoryParam = searchParams.get('categoria');
-    const searchQuery = searchParams.get('q');
-    
+
     if (categoryParam) {
       setFilters(prev => ({ ...prev, categories: [categoryParam] }));
     }
@@ -109,7 +109,7 @@ export const ProductsPage: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-4">
             <div>
               <h1 className="text-2xl lg:text-3xl font-bold text-gray-900">
-                {selectedCategory ? selectedCategory.name : 'Todos os Implementos'}
+                {selectedCategory ? selectedCategory.name : 'Todos os Implementos Galego'}
               </h1>
               {searchQuery && (
                 <p className="text-gray-600 mt-1">
@@ -117,23 +117,21 @@ export const ProductsPage: React.FC = () => {
                 </p>
               )}
             </div>
-            
+
             <div className="flex items-center gap-3">
               {/* View Mode Toggle */}
               <div className="hidden sm:flex border border-gray-300 rounded-lg">
                 <button
                   onClick={() => setViewMode('grid')}
-                  className={`p-2 rounded-l-lg transition-colors ${
-                    viewMode === 'grid' ? 'bg-blue-700 text-white' : 'text-gray-600 hover:bg-gray-100'
-                  }`}
+                  className={`p-2 rounded-l-lg transition-colors ${viewMode === 'grid' ? 'bg-blue-700 text-white' : 'text-gray-600 hover:bg-gray-100'
+                    }`}
                 >
                   <Grid className="w-5 h-5" />
                 </button>
                 <button
                   onClick={() => setViewMode('list')}
-                  className={`p-2 rounded-r-lg transition-colors ${
-                    viewMode === 'list' ? 'bg-blue-700 text-white' : 'text-gray-600 hover:bg-gray-100'
-                  }`}
+                  className={`p-2 rounded-r-lg transition-colors ${viewMode === 'list' ? 'bg-blue-700 text-white' : 'text-gray-600 hover:bg-gray-100'
+                    }`}
                 >
                   <List className="w-5 h-5" />
                 </button>
@@ -149,7 +147,7 @@ export const ProductsPage: React.FC = () => {
                   <span>{sortOptions.find(opt => opt.value === sortBy)?.label}</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
-                
+
                 {showSortDropdown && (
                   <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-lg z-10">
                     {sortOptions.map(option => (
@@ -178,15 +176,25 @@ export const ProductsPage: React.FC = () => {
               </Button>
             </div>
           </div>
-          
+
           <p className="text-gray-600">
             {filteredProducts.length} implementos encontrados
           </p>
         </div>
 
+
         <div className="flex gap-8">
           {/* Desktop Filters */}
           <div className="hidden lg:block w-64 flex-shrink-0">
+            {/* Galego logo above filters */}
+            <div className="bg-white rounded-xl shadow-sm p-2 mb-4 flex justify-center items-center">
+              <img
+                src={galegoImage}
+                alt="Implementos Galego"
+                className="max-h-25 w-50 object-contain"
+              />
+            </div>
+
             <FiltersPanel
               filters={filters}
               onFiltersChange={setFilters}
@@ -195,11 +203,10 @@ export const ProductsPage: React.FC = () => {
 
           {/* Products Grid */}
           <div className="flex-1">
-            <div className={`grid gap-6 ${
-              viewMode === 'grid'
-                ? 'grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'
-                : 'grid-cols-1'
-            }`}>
+            <div className={`grid gap-6 ${viewMode === 'grid'
+              ? 'grid-cols-1 sm:grid-cols-2 xl:grid-cols-3'
+              : 'grid-cols-1'
+              }`}>
               {filteredProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
               ))}

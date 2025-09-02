@@ -52,7 +52,7 @@ export const Header: React.FC = () => {
               Implementos
             </Link>
             <Link to="/armazenagem" className="text-gray-700 hover:text-blue-700 transition-colors">
-              Pátios
+              Centros de Distribuição
             </Link>
             <Link to="/financiamento" className="text-gray-700 hover:text-blue-700 transition-colors">
               Financiamento

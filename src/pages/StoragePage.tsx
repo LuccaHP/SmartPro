@@ -70,10 +70,10 @@ export const StoragePage: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-              Pátios e Estacionamentos
+              Centros de Distribuição
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Alugue pátios, garagens e estacionamentos para guardar seus implementos e caminhões com segurança e praticidade.
+              Alugue centros de distribuição, garagens e estacionamentos para guardar seus implementos e caminhões com segurança e praticidade.
             </p>
           </div>
         </div>
@@ -146,7 +146,7 @@ export const StoragePage: React.FC = () => {
         {/* Results */}
         <div className="mb-6">
           <p className="text-gray-600">
-            {filteredSpaces.length} pátios encontrados
+            {filteredSpaces.length} Centros de Distribuição encontrados
           </p>
         </div>
 
