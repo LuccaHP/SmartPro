@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingCart, CreditCard } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import { products } from '../data/products';
 import { formatPrice } from '../utils/formatters';
@@ -155,6 +155,12 @@ export const CartPage: React.FC = () => {
                 <Link to="/checkout" className="block">
                   <Button className="w-full">
                     Finalizar pedido
+                  </Button>
+                </Link>
+                <Link to="/financiamento" className="block">
+                  <Button variant="secondary" className="w-full">
+                    <CreditCard className="w-5 h-5 mr-2" />
+                    Simular financiamento
                   </Button>
                 </Link>
                 <Link to="/produtos">

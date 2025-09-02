@@ -54,6 +54,9 @@ export const Header: React.FC = () => {
             <Link to="/armazenagem" className="text-gray-700 hover:text-blue-700 transition-colors">
               Pátios
             </Link>
+            <Link to="/financiamento" className="text-gray-700 hover:text-blue-700 transition-colors">
+              Financiamento
+            </Link>
             <Link to="/ajuda" className="text-gray-700 hover:text-blue-700 transition-colors">
               Ajuda
             </Link>
@@ -106,6 +109,13 @@ export const Header: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Pátios
+            </Link>
+            <Link
+              to="/financiamento"
+              className="block px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-gray-100 rounded-lg transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Financiamento
             </Link>
             <Link
               to="/ajuda"

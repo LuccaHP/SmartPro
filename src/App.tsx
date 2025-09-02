@@ -9,6 +9,7 @@ import { ProductDetailPage } from './pages/ProductDetailPage';
 import { CartPage } from './pages/CartPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { StoragePage } from './pages/StoragePage';
+import { FinancingPage } from './pages/FinancingPage';
 import { HelpPage } from './pages/HelpPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/carrinho" element={<CartPage />} />
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/armazenagem" element={<StoragePage />} />
+              <Route path="/financiamento" element={<FinancingPage />} />
               <Route path="/ajuda" element={<HelpPage />} />
               <Route path="/sobre" element={<HelpPage />} />
               <Route path="*" element={<NotFoundPage />} />
