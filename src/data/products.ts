@@ -8,7 +8,7 @@ export const products: Product[] = [
     price: 285000.00,
     images: [
       'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/162539/architecture-building-amsterdam-blue-162539.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.8,
     reviewCount: 27,
@@ -32,8 +32,8 @@ export const products: Product[] = [
     categoryId: 'tanques',
     price: 195000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.6,
     reviewCount: 18,
@@ -57,7 +57,7 @@ export const products: Product[] = [
     categoryId: 'furgoes-baus',
     price: 165000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.5,
     reviewCount: 34,
@@ -104,8 +104,8 @@ export const products: Product[] = [
     categoryId: 'plataformas',
     price: 145000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.4,
     reviewCount: 15,
@@ -128,7 +128,7 @@ export const products: Product[] = [
     categoryId: 'cegonhas',
     price: 320000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/164634/pexels-photo-164634.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.9,
     reviewCount: 12,
@@ -152,7 +152,7 @@ export const products: Product[] = [
     categoryId: 'graneleiros',
     price: 95000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.3,
     reviewCount: 28,
@@ -175,7 +175,7 @@ export const products: Product[] = [
     categoryId: 'cestos-aereos',
     price: 185000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.6,
     reviewCount: 19,
@@ -198,7 +198,7 @@ export const products: Product[] = [
     categoryId: 'furgoes-baus',
     price: 175000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.4,
     reviewCount: 31,
@@ -221,7 +221,7 @@ export const products: Product[] = [
     categoryId: 'tanques',
     price: 245000.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/586063/pexels-photo-586063.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     rating: 4.7,
     reviewCount: 14,
@@ -237,5 +237,31 @@ export const products: Product[] = [
     },
     sellerId: '9',
     stock: 1
+  },
+  {
+    id: '11',
+    title: 'Boiadeiro Gado 18m - Scania P 320',
+    categoryId: 'furgoes-baus',
+    price: 225000.00,
+    images: [
+      'https://images.pexels.com/photos/422218/pexels-photo-422218.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/1267338/pexels-photo-1267338.jpeg?auto=compress&cs=tinysrgb&w=400'
+    ],
+    rating: 4.8,
+    reviewCount: 35,
+    condition: 'usado',
+    location: 'Campo Grande, MS',
+    specs: {
+      'Ano': '2020',
+      'Comprimento': '18 metros',
+      'Capacidade': '35 cabeças de gado',
+      'Divisórias': 'Móveis ajustáveis',
+      'Ventilação': 'Natural e forçada',
+      'Piso': 'Antiderrapante',
+      'Aplicação': 'Transporte de gado bovino'
+    },
+    sellerId: '10',
+    stock: 1,
+    featured: true
   }
 ];
