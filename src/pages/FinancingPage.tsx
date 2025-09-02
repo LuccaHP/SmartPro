@@ -6,12 +6,19 @@ import { products } from '../data/products';
 import { formatPrice } from '../utils/formatters';
 import { Button } from '../components/ui/Button';
 
+// Parâmetros fixos da empresa
+const FINANCING_PARAMS = {
+  interestRate: 1.2, // 1,2% ao mês
+  maxTermMonths: 60, // Máximo 60 meses
+  minDownPaymentPercent: 20, // Mínimo 20% de entrada
+  availableTerms: [12, 18, 24, 36, 48, 60] // Prazos disponíveis
+};
+
 export const FinancingPage: React.FC = () => {
   const { items } = useCart();
-  const [financingForm, setFinancingForm] = useState({
-    downPayment: 0,
-    interestRate: 1.5,
-    termMonths: 24,
+  const [selectedTerm, setSelectedTerm] = useState(24);
+  const [downPaymentPercent, setDownPaymentPercent] = useState(30);
+  const [customerForm, setCustomerForm] = useState({
     name: '',
     email: '',
     phone: '',
@@ -29,11 +36,11 @@ export const FinancingPage: React.FC = () => {
     0
   );
 
+  const downPayment = (totalAmount * downPaymentPercent) / 100;
+  const financingAmount = totalAmount - downPayment;
+
   const financingCalculation = useMemo(() => {
-    const principal = totalAmount - financingForm.downPayment;
-    const monthlyRate = financingForm.interestRate / 100;
-    
-    if (principal <= 0 || monthlyRate <= 0 || financingForm.termMonths <= 0) {
+    if (financingAmount <= 0 || selectedTerm <= 0) {
       return {
         monthlyPayment: 0,
         totalPayment: 0,
@@ -41,11 +48,12 @@ export const FinancingPage: React.FC = () => {
       };
     }
 
-    // Cálculo usando fórmula de juros compostos (Price)
-    const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, financingForm.termMonths)) / 
-                          (Math.pow(1 + monthlyRate, financingForm.termMonths) - 1);
+    // Cálculo usando fórmula Price (juros compostos)
+    const monthlyRate = FINANCING_PARAMS.interestRate / 100;
+    const monthlyPayment = financingAmount * (monthlyRate * Math.pow(1 + monthlyRate, selectedTerm)) / 
+                          (Math.pow(1 + monthlyRate, selectedTerm) - 1);
     
-    const totalPayment = monthlyPayment * financingForm.termMonths + financingForm.downPayment;
+    const totalPayment = monthlyPayment * selectedTerm + downPayment;
     const totalInterest = totalPayment - totalAmount;
 
     return {
@@ -53,7 +61,7 @@ export const FinancingPage: React.FC = () => {
       totalPayment,
       totalInterest
     };
-  }, [totalAmount, financingForm.downPayment, financingForm.interestRate, financingForm.termMonths]);
+  }, [totalAmount, downPayment, financingAmount, selectedTerm]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,7 +106,7 @@ export const FinancingPage: React.FC = () => {
             Financiamento de Implementos
           </h1>
           <p className="text-gray-600 mt-2">
-            Simule e solicite financiamento para seus implementos com as melhores condições do mercado.
+            Simule e solicite financiamento para seus implementos com as condições da nossa empresa.
           </p>
         </div>
 
@@ -148,78 +156,62 @@ export const FinancingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Financing Parameters */}
+            {/* Financing Options */}
             <div className="bg-white rounded-xl shadow-sm p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                Parâmetros do Financiamento
+                Opções de Financiamento
               </h2>
               
               <div className="space-y-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Entrada (R$)
+                    Percentual de Entrada
                   </label>
-                  <input
-                    type="number"
-                    min="0"
-                    max={totalAmount}
-                    value={financingForm.downPayment}
-                    onChange={(e) => setFinancingForm({
-                      ...financingForm, 
-                      downPayment: Number(e.target.value)
-                    })}
+                  <select
+                    value={downPaymentPercent}
+                    onChange={(e) => setDownPaymentPercent(Number(e.target.value))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
+                  >
+                    <option value={20}>20% - {formatPrice((totalAmount * 20) / 100)}</option>
+                    <option value={30}>30% - {formatPrice((totalAmount * 30) / 100)}</option>
+                    <option value={40}>40% - {formatPrice((totalAmount * 40) / 100)}</option>
+                    <option value={50}>50% - {formatPrice((totalAmount * 50) / 100)}</option>
+                  </select>
                   <p className="text-xs text-gray-500 mt-1">
-                    Máximo: {formatPrice(totalAmount)}
+                    Entrada mínima: {FINANCING_PARAMS.minDownPaymentPercent}%
                   </p>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Taxa de Juros (% ao mês)
-                  </label>
-                  <input
-                    type="number"
-                    min="0.1"
-                    max="10"
-                    step="0.1"
-                    value={financingForm.interestRate}
-                    onChange={(e) => setFinancingForm({
-                      ...financingForm, 
-                      interestRate: Number(e.target.value)
-                    })}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Prazo de Pagamento (meses)
+                    Prazo de Pagamento
                   </label>
                   <select
-                    value={financingForm.termMonths}
-                    onChange={(e) => setFinancingForm({
-                      ...financingForm, 
-                      termMonths: Number(e.target.value)
-                    })}
+                    value={selectedTerm}
+                    onChange={(e) => setSelectedTerm(Number(e.target.value))}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   >
-                    <option value={12}>12 meses</option>
-                    <option value={18}>18 meses</option>
-                    <option value={24}>24 meses</option>
-                    <option value={36}>36 meses</option>
-                    <option value={48}>48 meses</option>
-                    <option value={60}>60 meses</option>
+                    {FINANCING_PARAMS.availableTerms.map(term => (
+                      <option key={term} value={term}>
+                        {term} meses
+                      </option>
+                    ))}
                   </select>
+                </div>
+
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <div className="text-sm text-gray-600 mb-1">Taxa de Juros (fixa)</div>
+                  <div className="text-lg font-semibold text-blue-700">
+                    {FINANCING_PARAMS.interestRate}% ao mês
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Personal Information */}
+            {/* Customer Information */}
             <div className="bg-white rounded-xl shadow-sm p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                Dados Pessoais
+                Dados para Análise de Crédito
               </h2>
               
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -230,8 +222,8 @@ export const FinancingPage: React.FC = () => {
                   <input
                     type="text"
                     required
-                    value={financingForm.name}
-                    onChange={(e) => setFinancingForm({...financingForm, name: e.target.value})}
+                    value={customerForm.name}
+                    onChange={(e) => setCustomerForm({...customerForm, name: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -244,8 +236,8 @@ export const FinancingPage: React.FC = () => {
                     type="text"
                     required
                     placeholder="000.000.000-00"
-                    value={financingForm.cpf}
-                    onChange={(e) => setFinancingForm({...financingForm, cpf: e.target.value})}
+                    value={customerForm.cpf}
+                    onChange={(e) => setCustomerForm({...customerForm, cpf: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -257,8 +249,8 @@ export const FinancingPage: React.FC = () => {
                   <input
                     type="email"
                     required
-                    value={financingForm.email}
-                    onChange={(e) => setFinancingForm({...financingForm, email: e.target.value})}
+                    value={customerForm.email}
+                    onChange={(e) => setCustomerForm({...customerForm, email: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -271,8 +263,8 @@ export const FinancingPage: React.FC = () => {
                     type="tel"
                     required
                     placeholder="(11) 99999-9999"
-                    value={financingForm.phone}
-                    onChange={(e) => setFinancingForm({...financingForm, phone: e.target.value})}
+                    value={customerForm.phone}
+                    onChange={(e) => setCustomerForm({...customerForm, phone: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -285,8 +277,8 @@ export const FinancingPage: React.FC = () => {
                     type="number"
                     required
                     min="0"
-                    value={financingForm.income}
-                    onChange={(e) => setFinancingForm({...financingForm, income: e.target.value})}
+                    value={customerForm.income}
+                    onChange={(e) => setCustomerForm({...customerForm, income: e.target.value})}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                 </div>
@@ -314,7 +306,10 @@ export const FinancingPage: React.FC = () => {
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <div className="text-sm text-gray-600 mb-1">Montante para Financiamento</div>
                   <div className="text-2xl font-bold text-blue-700">
-                    {formatPrice(totalAmount - financingForm.downPayment)}
+                    {formatPrice(financingAmount)}
+                  </div>
+                  <div className="text-sm text-gray-600">
+                    Valor total: {formatPrice(totalAmount)} - Entrada: {formatPrice(downPayment)}
                   </div>
                 </div>
 
@@ -322,14 +317,15 @@ export const FinancingPage: React.FC = () => {
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <div className="text-sm text-gray-600 mb-1">Taxa de Juros</div>
                     <div className="text-lg font-semibold text-gray-900">
-                      {financingForm.interestRate}% a.m.
+                      {FINANCING_PARAMS.interestRate}% a.m.
                     </div>
+                    <div className="text-xs text-gray-500">Taxa fixa da empresa</div>
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg">
-                    <div className="text-sm text-gray-600 mb-1">Prazo de Pagamento</div>
+                    <div className="text-sm text-gray-600 mb-1">Prazo Selecionado</div>
                     <div className="text-lg font-semibold text-gray-900">
-                      {financingForm.termMonths} meses
+                      {selectedTerm} meses
                     </div>
                   </div>
                 </div>
@@ -340,7 +336,7 @@ export const FinancingPage: React.FC = () => {
                     {formatPrice(financingCalculation.monthlyPayment)}
                   </div>
                   <div className="text-sm text-gray-600">
-                    {financingForm.termMonths} parcelas de {formatPrice(financingCalculation.monthlyPayment)}
+                    Total de {selectedTerm} parcelas
                   </div>
                 </div>
 
@@ -350,8 +346,12 @@ export const FinancingPage: React.FC = () => {
                     <span className="font-medium">{formatPrice(totalAmount)}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Entrada</span>
-                    <span className="font-medium">{formatPrice(financingForm.downPayment)}</span>
+                    <span className="text-gray-600">Entrada ({downPaymentPercent}%)</span>
+                    <span className="font-medium">{formatPrice(downPayment)}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Montante financiado</span>
+                    <span className="font-medium">{formatPrice(financingAmount)}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Total de juros</span>
@@ -367,19 +367,19 @@ export const FinancingPage: React.FC = () => {
               </div>
             </div>
 
-            {/* Benefits */}
+            {/* Company Financing Conditions */}
             <div className="bg-white rounded-xl shadow-sm p-6">
               <h3 className="font-semibold text-gray-900 mb-4">
-                Vantagens do Financiamento
+                Condições da Empresa
               </h3>
               
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <TrendingUp className="w-5 h-5 text-green-600 mt-0.5" />
                   <div>
-                    <div className="font-medium text-gray-900">Taxas competitivas</div>
+                    <div className="font-medium text-gray-900">Taxa fixa</div>
                     <div className="text-sm text-gray-600">
-                      As melhores taxas do mercado para implementos
+                      {FINANCING_PARAMS.interestRate}% ao mês para todos os clientes
                     </div>
                   </div>
                 </div>
@@ -387,9 +387,9 @@ export const FinancingPage: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <Calculator className="w-5 h-5 text-blue-600 mt-0.5" />
                   <div>
-                    <div className="font-medium text-gray-900">Parcelas flexíveis</div>
+                    <div className="font-medium text-gray-900">Prazos flexíveis</div>
                     <div className="text-sm text-gray-600">
-                      Escolha o prazo que melhor se adapta ao seu fluxo de caixa
+                      De 12 até {FINANCING_PARAMS.maxTermMonths} meses para pagamento
                     </div>
                   </div>
                 </div>
@@ -397,12 +397,46 @@ export const FinancingPage: React.FC = () => {
                 <div className="flex items-start gap-3">
                   <CreditCard className="w-5 h-5 text-purple-600 mt-0.5" />
                   <div>
-                    <div className="font-medium text-gray-900">Aprovação rápida</div>
+                    <div className="font-medium text-gray-900">Entrada mínima</div>
                     <div className="text-sm text-gray-600">
-                      Análise de crédito em até 24 horas
+                      {FINANCING_PARAMS.minDownPaymentPercent}% do valor total
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+
+            {/* Available Terms */}
+            <div className="bg-white rounded-xl shadow-sm p-6">
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Escolha o Prazo de Pagamento
+              </h3>
+              
+              <div className="grid grid-cols-2 gap-3">
+                {FINANCING_PARAMS.availableTerms.map(term => {
+                  const tempAmount = totalAmount - (totalAmount * downPaymentPercent) / 100;
+                  const monthlyRate = FINANCING_PARAMS.interestRate / 100;
+                  const payment = tempAmount * (monthlyRate * Math.pow(1 + monthlyRate, term)) / 
+                                 (Math.pow(1 + monthlyRate, term) - 1);
+                  
+                  return (
+                    <button
+                      key={term}
+                      onClick={() => setSelectedTerm(term)}
+                      className={`p-4 border rounded-lg text-left transition-all ${
+                        selectedTerm === term
+                          ? 'border-blue-700 bg-blue-50'
+                          : 'border-gray-200 hover:border-gray-300'
+                      }`}
+                    >
+                      <div className="font-medium text-gray-900">{term} meses</div>
+                      <div className="text-sm text-blue-700 font-medium">
+                        {formatPrice(payment)}
+                      </div>
+                      <div className="text-xs text-gray-500">por mês</div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
@@ -412,10 +446,11 @@ export const FinancingPage: React.FC = () => {
                 Informações Importantes
               </h3>
               <ul className="text-sm text-yellow-700 space-y-1">
-                <li>• Esta é uma simulação. Valores podem variar na análise final.</li>
-                <li>• Sujeito à aprovação de crédito.</li>
-                <li>• Taxa de juros pode variar conforme perfil do cliente.</li>
-                <li>• Documentação completa será solicitada para aprovação.</li>
+                <li>• Taxa de juros fixa de {FINANCING_PARAMS.interestRate}% ao mês</li>
+                <li>• Entrada mínima de {FINANCING_PARAMS.minDownPaymentPercent}% obrigatória</li>
+                <li>• Sujeito à aprovação de crédito</li>
+                <li>• Análise de crédito em até 24 horas</li>
+                <li>• Documentação completa será solicitada</li>
               </ul>
             </div>
           </div>
