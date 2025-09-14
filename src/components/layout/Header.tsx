@@ -60,6 +60,9 @@ export const Header: React.FC = () => {
             <Link to="/ajuda" className="text-gray-700 hover:text-blue-700 transition-colors">
               Ajuda
             </Link>
+            <Link to="/chat" className="text-gray-700 hover:text-blue-700 transition-colors">
+              ChatBot
+            </Link>
             <Link to="/carrinho" className="relative">
               <ShoppingCart className="w-6 h-6 text-gray-700 hover:text-blue-700 transition-colors" />
               {totalItems > 0 && (
@@ -123,6 +126,13 @@ export const Header: React.FC = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               Ajuda
+            </Link>
+            <Link
+              to="/chat"
+              className="block px-3 py-2 text-gray-700 hover:text-blue-700 hover:bg-gray-100 rounded-lg transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ChatBot
             </Link>
             <Link
               to="/carrinho"

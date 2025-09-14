@@ -11,6 +11,7 @@ import { CartPage } from './pages/CartPage';
 import { CheckoutPage } from './pages/CheckoutPage';
 import { StoragePage } from './pages/StoragePage';
 import { FinancingPage } from './pages/FinancingPage';
+import { ChatPage } from "./pages/ChatPage";
 import { HelpPage } from './pages/HelpPage';
 import { NotFoundPage } from './pages/NotFoundPage';
 
@@ -30,6 +31,7 @@ function App() {
               <Route path="/checkout" element={<CheckoutPage />} />
               <Route path="/armazenagem" element={<StoragePage />} />
               <Route path="/financiamento" element={<FinancingPage />} />
+              <Route path="/chat" element={<ChatPage />} />
               <Route path="/ajuda" element={<HelpPage />} />
               <Route path="/sobre" element={<HelpPage />} />
               <Route path="*" element={<NotFoundPage />} />
