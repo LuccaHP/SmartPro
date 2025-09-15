@@ -12,8 +12,8 @@ export const storageSpaces: Storage[] = [
     features: ['Acesso 24h', 'Segurança', 'Portaria', 'Vigilância', 'Cerca elétrica'],
     pricePerMonth: 3500.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     available: true
   },
@@ -28,7 +28,7 @@ export const storageSpaces: Storage[] = [
     features: ['Acesso 8h-18h', 'Segurança', 'Cobertura', 'Iluminação'],
     pricePerMonth: 800.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     available: true
   },
@@ -43,8 +43,8 @@ export const storageSpaces: Storage[] = [
     features: ['Acesso 24h', 'Segurança', 'Balança', 'Oficina mecânica', 'Posto de combustível'],
     pricePerMonth: 8500.00,
     images: [
-      'https://images.pexels.com/photos/1118448/pexels-photo-1118448.jpeg?auto=compress&cs=tinysrgb&w=400',
-      'https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=400'
+      'https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=400',
+      'https://images.pexels.com/photos/236698/pexels-photo-236698.jpeg?auto=compress&cs=tinysrgb&w=400'
     ],
     available: true
   },

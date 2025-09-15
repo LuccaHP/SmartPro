@@ -72,5 +72,13 @@ export const sellers: Seller[] = [
     location: 'Salvador, BA',
     rating: 4.7,
     reviewCount: 234
+  },
+  {
+    id: '10',
+    name: 'Boiadeiros Centro-Oeste',
+    verified: true,
+    location: 'Campo Grande, MS',
+    rating: 4.8,
+    reviewCount: 445
   }
 ];

@@ -17,6 +17,11 @@ export const ProductDetailPage: React.FC = () => {
   const [selectedImageIndex, setSelectedImageIndex] = React.useState(0);
   const { addItem } = useCart();
 
+  // Scroll to top when component mounts or product changes
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
+
   const product = products.find(p => p.id === id);
   const seller = product ? sellers.find(s => s.id === product.sellerId) : null;
   const category = product ? categories.find(c => c.id === product.categoryId) : null;

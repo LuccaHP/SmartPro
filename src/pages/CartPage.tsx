@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Trash2, Plus, Minus, ShoppingCart } from 'lucide-react';
+import { Trash2, Plus, Minus, ShoppingCart, CreditCard } from 'lucide-react';
 import { useCart } from '../contexts/CartContext';
 import { products } from '../data/products';
 import { formatPrice } from '../utils/formatters';
@@ -157,6 +157,12 @@ export const CartPage: React.FC = () => {
                     Finalizar pedido
                   </Button>
                 </Link>
+                <Link to="/financiamento" className="block">
+                  <Button variant="secondary" className="w-full">
+                    <CreditCard className="w-5 h-5 mr-2" />
+                    Simular financiamento
+                  </Button>
+                </Link>
                 <Link to="/produtos">
                   <Button variant="outline" className="w-full">
                     Ver mais implementos
@@ -166,21 +172,6 @@ export const CartPage: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Related Products */}
-        {cartProducts.length > 0 && (
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">
-              Implementos Relacionados
-            </h2>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {products.filter(p => p.categoryId === cartProducts[0]?.categoryId && !items.some(item => item.productId === p.id)).slice(0, 4).map(relatedProduct => (
-                <ProductCard key={relatedProduct.id} product={relatedProduct} />
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
