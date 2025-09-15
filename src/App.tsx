@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { ScrollToTop } from './components/layout/ScrollToTop';
+import { ChatBox } from './components/ui/ChatBox';
 import { CartProvider } from './contexts/CartContext';
 import { HomePage } from './pages/HomePage';
 import { ProductsPage } from './pages/ProductsPage';
@@ -38,6 +39,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
+          <ChatBox />
         </div>
       </Router>
     </CartProvider>
